@@ -1,26 +1,44 @@
 <template>
-<div class="container">
-  <h3>Hey Fellas</h3>
-</div>
+  <div class="container">
+    <h3>The Alertifier!</h3>
+    <input @input="recordMessage($event.target.value)" />
+    <div>
+      <button @click="sendMessage">Send 💬</button>
+    </div>
+  </div>
 </template>
-
 <script>
 export default {
   setup() {
+    const msg = "";
 
+    // arrow function
+    const recordMessage = (value) => {
+      msg = value;
+    };
+
+    const sendMessage = () => {
+      console.log("sending:", msg)
+      alert("My Message:", msg);
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-  .container {
+.container {
   display: inline-flex;
   flex-direction: column;
 
   padding: 1rem;
+  margin: 1rem;
   background-color: salmon;
   border-radius: 25px;
 
   width: 50%;
+}
+
+button {
+  margin: 0.5rem;
 }
 </style>
