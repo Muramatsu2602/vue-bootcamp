@@ -1,5 +1,5 @@
 <template>
-  <div>Sou o ASD: {{ a }}</div>
+  <div style="margin-top: 40px">Sou o ASD: {{ a }}</div>
 
   <button @click="inc">Add ➕</button>
 </template>

@@ -2,6 +2,8 @@
   <div>
     Hello
     <options />
+    <options />
+    <options />
 
     <composition-api/>
   </div>
@@ -14,7 +16,7 @@
 </template>
 
 <script>
-import Options from '@/components/Options.vue';
+import Options from '@/components/OptionsApi.vue';
 import CompositionApi from '@/components/CompositionApi.vue';
 
 export default {
