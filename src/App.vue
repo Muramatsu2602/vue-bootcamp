@@ -1,26 +1,27 @@
 <template>
   <div>
-    Hello
+    <!-- By Yoyo -->
+    <h1>Lesson 2: Yoyo's</h1>
     <options />
-    <options />
-    <options />
-
-    <composition-api/>
+    <composition-api />
+    <!-- Lesson 2 Challenge-->
+    <h1>Lesson 2: Challenge</h1>
+    <meu-composition/>
+    <meu-option/>
   </div>
-  <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <div id="test">Hello World!</div>
-  </div>
-  <router-view /> -->
 </template>
 
 <script>
 import Options from '@/components/OptionsApi.vue';
 import CompositionApi from '@/components/CompositionApi.vue';
 
+import MeuOption from '@/components/desafio-aula2/meuOption.vue';
+import MeuComposition from '@/components/desafio-aula2/meuComposition.vue';
+
 export default {
-  components: { Options, CompositionApi },
+  components: {
+    Options, CompositionApi, MeuComposition, MeuOption,
+  },
 };
 </script>
 
