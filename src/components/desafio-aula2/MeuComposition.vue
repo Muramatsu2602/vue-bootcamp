@@ -8,9 +8,10 @@
   </div>
 </template>
 <script>
+import { ref } from '@vue/reactivity';
 export default {
   setup() {
-    const msg = "";
+    msg = ref("");
 
     // arrow function
     const recordMessage = (value) => {
