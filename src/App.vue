@@ -15,8 +15,8 @@
 import Options from '@/components/OptionsApi.vue';
 import CompositionApi from '@/components/CompositionApi.vue';
 
-import MeuOption from '@/components/desafio-aula2/meuOption.vue';
-import MeuComposition from '@/components/desafio-aula2/meuComposition.vue';
+import MeuOption from '@/components/desafio-aula2/MeuOption.vue';
+import MeuComposition from '@/components/desafio-aula2/MeuComposition.vue';
 
 export default {
   components: {
