@@ -8,20 +8,23 @@
   </div>
 </template>
 <script>
-import { ref } from '@vue/reactivity';
+import { ref } from "vue";
+
 export default {
   setup() {
-    msg = ref("");
+    const msg = ref("");
 
     // arrow function
-    const recordMessage = (value) => {
-      msg = value;
-    };
+    function recordMessage(input) {
+      msg.value = input;
+    }
 
     const sendMessage = () => {
-      console.log("sending:", msg)
-      alert("My Message:", msg);
+      console.log("sending:", msg);
+      alert("My Message:");
     };
+
+    return { msg };
   },
 };
 </script>
