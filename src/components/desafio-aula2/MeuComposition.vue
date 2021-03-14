@@ -8,11 +8,11 @@
   </div>
 </template>
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
   setup() {
-    const msg = ref('');
+    const msg = ref("");
 
     // arrow function
     function recordMessage(input) {
@@ -20,8 +20,8 @@ export default {
     }
 
     const sendMessage = () => {
-      console.log('sending:', msg);
-      alert('My Message:');
+      console.log("sending:", msg);
+      alert("My Message:");
     };
 
     return { msg };
@@ -45,5 +45,12 @@ export default {
 
 button {
   margin: 0.5rem;
+}
+
+input {
+  border-radius: 25px;
+  border-style: none;
+  outline: none;
+  padding: 0.5rem 0 0.5rem 0.5rem;
 }
 </style>
