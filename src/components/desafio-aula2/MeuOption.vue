@@ -50,6 +50,7 @@ export default {
   margin: 1rem;
   background-color: skyblue;
   border-radius: 25px;
+  box-shadow: 0 8px 6px -6px black;
 
   width: 50%;
 }
