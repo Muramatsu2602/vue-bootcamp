@@ -3,7 +3,7 @@
     <h3>The Alertifier!</h3>
     <input @input="recordMessage($event.target.value)" />
     <div>
-      <button @click="sendMessage">Send 💬</button>
+      <button @click="sendMessage">Send Message 💬</button>
     </div>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
 
     // arrow function
     function recordMessage(input) {
+      alert("this should work!")
       msg.value = input;
     }
 
