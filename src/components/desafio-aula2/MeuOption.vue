@@ -5,6 +5,7 @@
 <template>
   <div class="container">
     <h3>The Almighty Adder!</h3>
+    <p>Hey, this is a text</p>
     <pre>Result: {{ sum }}</pre>
     <input type="number" @input="handleInput($event.target.value)" />
     <div>
@@ -25,16 +26,16 @@ export default {
 
   methods: {
     handleInput(value) {
-      if (value && !value.trim() == "") this.currentValue = parseInt(value);
+      if (value && !value.trim() == '') this.currentValue = parseInt(value);
       else this.currentValue = 0;
     },
     zerar() {
-      if (this.sum === 0) alert("Result already empty!!");
+      if (this.sum === 0) alert('Result already empty!!');
 
       this.sum = 0;
     },
     add() {
-      if (this.currentValue == 0) alert("Field cannot be empty or 0!");
+      if (this.currentValue == 0) alert('Field cannot be empty or 0!');
       this.sum += this.currentValue;
     },
   },

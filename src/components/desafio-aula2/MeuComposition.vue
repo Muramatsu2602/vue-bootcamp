@@ -8,21 +8,21 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref } from 'vue';
 
 export default {
   setup() {
-    const msg = ref("");
+    const msg = ref('');
 
     // arrow function
     function recordMessage(input) {
-      alert("this should work!")
+      alert('this should work!');
       msg.value = input;
     }
 
     const sendMessage = () => {
-      console.log("sending:", msg);
-      alert("My Message:");
+      console.log('sending:', msg);
+      alert('My Message:');
     };
 
     return { msg };
