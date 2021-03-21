@@ -1,5 +1,9 @@
 <template>
-  <div style="margin-top: 40px">Sou o ASD: {{ a }}</div>
+  <div style="margin-top: 40px">
+    <p>{{ c }}: {{ a }}</p>
+  </div>
+
+  <div>total dentro do child: {{ total }}</div>
 
   <button @click="inc">Add ➕</button>
 </template>
@@ -8,6 +12,7 @@
 export default {
   props: {
     c: { type: String, default: null },
+    total: { type: Number, default: 0 },
   },
 
   data() {

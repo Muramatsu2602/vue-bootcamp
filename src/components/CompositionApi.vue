@@ -6,16 +6,20 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
+  props: {
+    text: { type: String, default: null },
+  },
+
   setup() {
     const a = ref(0);
-    console.log('sou um comp composition');
+    console.log("sou um comp composition");
 
     // arrow function
     const inc = () => {
-      console.log('vamos inc');
+      console.log("vamos inc");
       a.value += 1;
     };
 

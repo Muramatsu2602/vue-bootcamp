@@ -11,13 +11,21 @@
     <meu-option />
 
     <h1>Lesson 3: Yoyo's</h1>
-    <options c="sou o c" />
-    <options />
-    <options />
+    <div>Hello</div>
+    <div>Total: {{ total }}</div>
+
+    <options c="Componente options 1" />
+    <options c="Componente options 2" />
+    <options c="Componente options 3" />
+
+    <composition-api text="Componente Composition 1" :total="total" />
+    <composition-api text="Componente Composition 2" />
+    <composition-api text="Componente Composition 3" />
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
 import Options from "@/components/OptionsApi.vue";
 import CompositionApi from "@/components/CompositionApi.vue";
 
@@ -30,6 +38,12 @@ export default {
     CompositionApi,
     MeuComposition,
     MeuOption,
+  },
+
+  setup() {
+    const total = ref(0);
+
+    return { total };
   },
 };
 </script>
