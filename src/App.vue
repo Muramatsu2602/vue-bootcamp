@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <!-- By Yoyo -->
+  <!-- <div>
     <h1>Lesson 2: Yoyo's</h1>
     <options />
     <composition-api />
 
-    <!-- Lesson 2 Challenge-->
     <h1>Lesson 2: Challenge</h1>
     <meu-composition />
     <meu-option />
@@ -18,10 +16,17 @@
     <options c="Componente options 2" @inc="incHandler" />
     <options c="Componente options 3" @inc="incHandler" />
 
-    <composition-api text="Componente Composition 1" />
-    <composition-api text="Componente Composition 2" />
-    <composition-api text="Componente Composition 3" />
+    <composition-api text="Componente Composition 1" @inc="incHandler" />
+    <composition-api text="Componente Composition 2" @inc="incHandler" />
+    <composition-api text="Componente Composition 3" @inc="incHandler" />
+  </div> -->
+
+  <div id="nav">
+    <router-link to="/">Home </router-link>
+    <router-link to="/about">About </router-link>
+    <router-link to="/components">Components </router-link>
   </div>
+  <router-view />
 </template>
 
 <script>

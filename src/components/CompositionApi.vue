@@ -8,19 +8,35 @@
 <script>
 import { ref } from "vue";
 
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+
+// // 1:
+// const a = obj.a;
+// const b = obj.b;
+
+// 2:
+const { a, b } = obj; // de-structing an object
+
 export default {
   props: {
     text: { type: String, default: null },
   },
 
-  setup() {
+  setup(props, { emit }) {
     const a = ref(0);
-    console.log("sou um comp composition");
+
+    console.log("props", props);
 
     // arrow function
     const inc = () => {
       console.log("vamos inc");
       a.value += 1;
+
+      emit("inc");
     };
 
     return { a, inc };
