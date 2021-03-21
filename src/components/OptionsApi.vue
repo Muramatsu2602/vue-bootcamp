@@ -26,6 +26,8 @@ export default {
     inc() {
       console.log("let's increment!", this.b);
       this.a += 1;
+
+      this.$emit("inc");
     },
   },
 };

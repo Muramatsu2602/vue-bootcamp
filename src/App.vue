@@ -14,11 +14,11 @@
     <div>Hello</div>
     <div>Total: {{ total }}</div>
 
-    <options c="Componente options 1" />
-    <options c="Componente options 2" />
-    <options c="Componente options 3" />
+    <options c="Componente options 1" :total="total" @inc="incHandler" />
+    <options c="Componente options 2" @inc="incHandler" />
+    <options c="Componente options 3" @inc="incHandler" />
 
-    <composition-api text="Componente Composition 1" :total="total" />
+    <composition-api text="Componente Composition 1" />
     <composition-api text="Componente Composition 2" />
     <composition-api text="Componente Composition 3" />
   </div>
@@ -43,7 +43,12 @@ export default {
   setup() {
     const total = ref(0);
 
-    return { total };
+    const incHandler = () => {
+      console.log("total", total.value);
+      total.value += 1;
+    };
+
+    return { total, incHandler };
   },
 };
 </script>
