@@ -6,10 +6,14 @@
 
 <script>
 export default {
+  props: {
+    c: { type: String, default: null },
+  },
+
   data() {
     return {
       a: 0,
-      b: 'sou o b',
+      b: "sou o b",
     };
   },
 

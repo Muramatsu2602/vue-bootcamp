@@ -4,23 +4,32 @@
     <h1>Lesson 2: Yoyo's</h1>
     <options />
     <composition-api />
+
     <!-- Lesson 2 Challenge-->
     <h1>Lesson 2: Challenge</h1>
-    <meu-composition/>
-    <meu-option/>
+    <meu-composition />
+    <meu-option />
+
+    <h1>Lesson 3: Yoyo's</h1>
+    <options c="sou o c" />
+    <options />
+    <options />
   </div>
 </template>
 
 <script>
-import Options from '@/components/OptionsApi.vue';
-import CompositionApi from '@/components/CompositionApi.vue';
+import Options from "@/components/OptionsApi.vue";
+import CompositionApi from "@/components/CompositionApi.vue";
 
-import MeuOption from '@/components/desafio-aula2/MeuOption.vue';
-import MeuComposition from '@/components/desafio-aula2/MeuComposition.vue';
+import MeuOption from "@/components/desafio-aula2/MeuOption.vue";
+import MeuComposition from "@/components/desafio-aula2/MeuComposition.vue";
 
 export default {
   components: {
-    Options, CompositionApi, MeuComposition, MeuOption,
+    Options,
+    CompositionApi,
+    MeuComposition,
+    MeuOption,
   },
 };
 </script>
