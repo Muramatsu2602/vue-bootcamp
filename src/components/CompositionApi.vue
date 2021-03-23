@@ -7,6 +7,7 @@
 
 <script>
 import { ref } from "vue";
+import useAuth from "@/modules/auth";
 
 const obj = {
   a: 1,
@@ -27,9 +28,11 @@ export default {
   },
 
   setup(props, { emit }) {
+    const auth = useAuth();
     const a = ref(0);
 
-    console.log("props", props);
+    // console.log("props", props);
+    console.log("auth dentro de CompositionApi.vue", auth);
 
     // arrow function
     const inc = () => {

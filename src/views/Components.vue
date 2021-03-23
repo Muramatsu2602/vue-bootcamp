@@ -30,6 +30,8 @@ import CompositionApi from "@/components/CompositionApi.vue";
 import MeuOption from "@/components/desafio-aula2/MeuOption.vue";
 import MeuComposition from "@/components/desafio-aula2/MeuComposition.vue";
 
+import useAuth from "@/modules/auth";
+
 export default defineComponent({
   components: {
     Options,
@@ -39,7 +41,10 @@ export default defineComponent({
   },
 
   setup() {
+    const auth = useAuth();
     const total = ref(0);
+
+    console.log("auth dentro de Componentes.vue", auth);
 
     const incHandler = () => {
       console.log("total", total.value);
