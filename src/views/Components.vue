@@ -31,6 +31,7 @@ import MeuOption from "@/components/desafio-aula2/MeuOption.vue";
 import MeuComposition from "@/components/desafio-aula2/MeuComposition.vue";
 
 import useAuth from "@/modules/auth";
+import useCards from "@/modules/cards";
 
 export default defineComponent({
   components: {
@@ -42,6 +43,8 @@ export default defineComponent({
 
   setup() {
     const auth = useAuth();
+    const cards = useCards();
+    
     const total = ref(0);
 
     console.log("auth dentro de Componentes.vue", auth);
