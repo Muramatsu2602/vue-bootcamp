@@ -1,4 +1,4 @@
-import { readonly } from "vue";
+import { readonly } from 'vue';
 
 // ---------------------- Interface ------------------
 interface Card {
@@ -10,18 +10,26 @@ interface Card {
 }
 
 interface State {
-  list: [];
+  list: Card[];
 }
 
 // -------------------------------------------
 
 // the cards will go here!
 const state: State = {
-  list: []
+  list: [
+    {
+      id: 1,
+      name: 'Pikachu',
+      price: 10,
+      attack: 5,
+      defence: 10,
+    },
+  ],
 };
 
 export default function useCards() {
   return readonly({
-    state
+    state,
   });
 }
