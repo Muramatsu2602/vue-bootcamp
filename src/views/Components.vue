@@ -1,5 +1,8 @@
 <template>
   <div>
+    <h1>Pokemons</h1>
+    <div style="margin-top: 100px">Listando Aqui mesmo Pokemons</div>
+
     <h1>Lesson 2: Yoyo's</h1>
     <options />
     <composition-api />
@@ -23,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from "vue";
+import { ref, defineComponent, computed } from "vue";
 import Options from "@/components/OptionsApi.vue";
 import CompositionApi from "@/components/CompositionApi.vue";
 
@@ -42,13 +45,16 @@ export default defineComponent({
   },
 
   setup() {
-    const auth = useAuth();
+    // const auth = useAuth();
     const cards = useCards();
-    
     const total = ref(0);
 
-    console.log("auth dentro de Componentes.vue", auth);
+    console.log("Components.cards", cards);
 
+    // Computed Functions
+    const listOfCards = computed(() => cards.state.list); // this form doesnt require 'return'
+
+    //functions
     const incHandler = () => {
       console.log("total", total.value);
       total.value += 1;
