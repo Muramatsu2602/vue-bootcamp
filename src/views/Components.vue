@@ -1,15 +1,21 @@
 <template>
   <div>
     <h1>Pokemons</h1>
-    <div style="margin-top: 100px">Listando Aqui mesmo Pokemons</div>
+    <div v-if="total > 0">
+      {{ listOfCards }}
+    </div>
 
-    <h1>Lesson 2: Yoyo's</h1>
+    <div v-if="total > 1">
+      {{ listOfCards }}
+    </div>
+
+    <h1 style="margin-top: 100px">Lesson 2: Yoyo's</h1>
     <options />
     <composition-api />
 
-    <h1>Lesson 2: Challenge</h1>
+    <!-- <h1>Lesson 2: Challenge</h1>
     <meu-composition />
-    <meu-option />
+    <meu-option /> -->
 
     <h1>Lesson 3: Yoyo's</h1>
     <div>Hello</div>
@@ -52,7 +58,9 @@ export default defineComponent({
     console.log("Components.cards", cards);
 
     // Computed Functions
-    const listOfCards = computed(() => cards.state.list); // this form doesnt require 'return'
+    const listOfCards = computed(() => {
+      return cards.state.list;
+    }); // this form doesnt require 'return'
 
     //functions
     const incHandler = () => {
@@ -60,7 +68,7 @@ export default defineComponent({
       total.value += 1;
     };
 
-    return { total, incHandler };
+    return { total, incHandler, listOfCards };
   },
 });
 </script>
