@@ -1,12 +1,15 @@
 <template>
   <div>
-    <h1>Pokemons</h1>
-    <div v-if="total > 0">
-      {{ listOfCards }}
-    </div>
+    <h1>{{ listOfCards.length }} Pokemons</h1>
 
-    <div v-if="total > 1">
-      {{ listOfCards }}
+    <div
+      v-if="listOfCards.length"
+      style="border: 1px solid blue; border-radius: 25px; padding: 1rem"
+    >
+      <!-- {{ listOfCards }} -->
+      <div v-for="card in listOfCards" :key="card.id" class="cards">
+        {{ card }}
+      </div>
     </div>
 
     <h1 style="margin-top: 100px">Lesson 2: Yoyo's</h1>
@@ -22,12 +25,7 @@
     <div>Total: {{ total }}</div>
 
     <options c="Componente options 1" :total="total" @inc="incHandler" />
-    <options c="Componente options 2" @inc="incHandler" />
-    <options c="Componente options 3" @inc="incHandler" />
-
     <composition-api text="Componente Composition 1" @inc="incHandler" />
-    <composition-api text="Componente Composition 2" @inc="incHandler" />
-    <composition-api text="Componente Composition 3" @inc="incHandler" />
   </div>
 </template>
 
@@ -72,3 +70,11 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss" scoped>
+.card {
+  border: 1px solid black;
+  padding: 1.5rem;
+  border-radius: 25px;
+}
+</style>
