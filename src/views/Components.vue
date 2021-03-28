@@ -2,13 +2,11 @@
   <div>
     <h1>{{ listOfCards.length }} Pokemons</h1>
 
-    <div
-      v-if="listOfCards.length"
-      style="border: 1px solid blue; border-radius: 25px; padding: 1rem"
-    >
+    <div v-if="listOfCards.length" class="cardContainer">
       <!-- {{ listOfCards }} -->
-      <div v-for="card in listOfCards" :key="card.id" class="cards">
-        {{ card }}
+      <div v-for="card in listOfCards" :key="card.id" class="card">
+        <p>ID: {{ card.id }}</p>
+        {{ card.name }}
       </div>
     </div>
 
@@ -76,5 +74,21 @@ export default defineComponent({
   border: 1px solid black;
   padding: 1.5rem;
   border-radius: 25px;
+  width: 5rem;
+  margin: 1rem;
+}
+
+.card p {
+  background-color: salmon;
+}
+
+.cardContainer {
+  border: 1px solid blue;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
