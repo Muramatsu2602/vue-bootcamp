@@ -71,8 +71,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .card {
-  border: 1px solid black;
-  padding: 1.5rem;
+  border: 2px solid black;
+  padding: 1rem;
   border-radius: 25px;
   width: 5rem;
   margin: 1rem;
@@ -80,15 +80,16 @@ export default defineComponent({
 
 .card p {
   background-color: salmon;
+  border-radius: 25px;
 }
 
 .cardContainer {
-  border: 1px solid blue;
+  border: 2px solid blue;
   border-radius: 25px;
   padding: 1rem;
-  margin: 1rem;
+  margin: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
 }
 </style>

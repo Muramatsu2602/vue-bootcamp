@@ -40,6 +40,20 @@ const state: State = {
       price: 40,
       attack: 6,
       defence: 51
+    },
+    {
+      id: 4,
+      name: "Piplup",
+      price: 45,
+      attack: 11,
+      defence: 98
+    },
+    {
+      id: 5,
+      name: "Biduf",
+      price: 32,
+      attack: 87,
+      defence: 22
     }
   ]
 };
