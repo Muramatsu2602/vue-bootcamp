@@ -1,4 +1,4 @@
-import { readonly } from "vue";
+import { reactive, readonly } from "vue";
 
 // ---------------------- Interface ------------------
 interface Card {
@@ -12,15 +12,19 @@ interface Card {
 
 interface State {
   list: Card[];
+  busy: boolean;
 }
 // -------------------------------------------
-const state: State = {
-  list: []
-};
+const state: State = reactive({
+  list: [],
+  busy: false
+});
 
 // ----------------Actions--------------------
 const actions = {
   loadCards() {
+    mutations.setBusy(true);
+
     const mockData = [
       {
         id: 1,
@@ -59,17 +63,49 @@ const actions = {
       }
     ];
 
-    return new Promise(resolve => {
-      console.log("Vamos carregar os cards");
+    console.log("Vamos carregar os cards");
 
+    setTimeout(() => {
+      // API CALLS GOES HERE
       
-      setTimeout(() => {
-        console.log("depois de 5s");
-      }, 5000);
-    });
+      console.log("depois de 1s");
+      mockData.forEach(card => {
+        // console.log(card);
+        mutations.processCard(card);
+      });
+
+      mutations.setBusy(false);
+    }, 1000);
   }
 };
+//-----------------Mutations--------------------------//
+const mutations = {
+  setBusy(newValue: boolean) {
+    state.busy = newValue;
+  },
 
+  processCard(card: any) {
+    // verifying if it exists
+    const idx = state.list.findIndex(x => x.id === card.id);
+    console.log("process", card);
+
+    const newCard: Card = {
+      id: card.id,
+      name: card.name,
+      price: card.price,
+      attack: card.attack,
+      defence: card.defence
+    };
+
+    if (idx === -1) {
+      // if it doesnt exist, create a new one
+      state.list.push(newCard);
+    } else {
+      // editando o atual, pra evitar duplicidade
+      state.list[idx] = newCard;
+    }
+  }
+};
 //------------------------------------------------------//
 
 export default function useCards() {

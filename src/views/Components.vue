@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div v-if="!busy">
+    {{ busy }}
     <h1>{{ listOfCards.length }} Pokemons</h1>
 
     <div v-if="listOfCards.length" class="cardContainer">
@@ -25,6 +26,8 @@
     <options c="Componente options 1" :total="total" @inc="incHandler" />
     <composition-api text="Componente Composition 1" @inc="incHandler" />
   </div>
+
+  <div v-else>Loading your app...</div>
 </template>
 
 <script lang="ts">
@@ -57,7 +60,7 @@ export default defineComponent({
     const listOfCards = computed(() => {
       return cards.state.list;
     }); // this form doesnt require 'return'
-
+    const busy = computed(() => cards.state.busy);
     //functions
     const incHandler = () => {
       console.log("total", total.value);
@@ -66,7 +69,7 @@ export default defineComponent({
 
     cards.actions.loadCards();
 
-    return { total, incHandler, listOfCards };
+    return { total, incHandler, listOfCards, busy };
   },
 });
 </script>
