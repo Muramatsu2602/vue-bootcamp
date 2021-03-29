@@ -64,6 +64,8 @@ export default defineComponent({
       total.value += 1;
     };
 
+    cards.actions.loadCards();
+
     return { total, incHandler, listOfCards };
   },
 });
