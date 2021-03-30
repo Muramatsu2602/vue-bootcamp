@@ -67,15 +67,15 @@ const actions = {
 
     setTimeout(() => {
       // API CALLS GOES HERE
-      
-      console.log("depois de 1s");
+
+      console.log("depois de 0.5s");
       mockData.forEach(card => {
         // console.log(card);
         mutations.processCard(card);
       });
 
       mutations.setBusy(false);
-    }, 1000);
+    }, 500);
   }
 };
 //-----------------Mutations--------------------------//
